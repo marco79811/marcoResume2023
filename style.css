@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap');
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 40px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    color: #2c3e50;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-top: 30px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.4em;
+    color: #34495e;
+}
+
+p, li {
+    font-size: 1em;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    color: #3498db;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #e74c3c;
+    transform: scale(1.2);
+}
+
+.nav-tabs {
+    border-bottom: 2px solid #3498db;
+}
+
+.nav-tabs .nav-link {
+    color: #2c3e50;
+    border: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    margin-right: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+.nav-tabs .nav-link.active {
+    color: #fff;
+    background-color: #3498db;
+    border-radius: 5px 5px 0 0;
+}
+
+.job-card, .education {
+    background-color: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.job-card:hover, .education:hover {
+    transform: translateX(5px);
+    box-shadow: -5px 5px 15px rgba(0,0,0,0.1);
+}
+
+.date {
+    font-style: italic;
+    color: #7f8c8d;
+}
+
+.job-details {
+    display: none;
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.skill-tag {
+    background-color: #e7f2fa;
+    color: #2980b9;
+    border: 1px solid #3498db;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    background-color: #3498db;
+    color: white;
+}
+
+.filter-btn {
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.filter-btn.active {
+    background-color: #3498db;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    .social-icons a {
+        font-size: 20px;
+    }
+}
