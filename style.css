@@ -5,6 +5,11 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
@@ -14,14 +19,10 @@ body {
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
     border-radius: 8px;
     padding: 40px;
+    flex: 1;
 }
 
-header {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
     color: #2c3e50;
 }
@@ -64,6 +65,11 @@ p, li {
     transform: scale(1.2);
 }
 
+.social-icons svg {
+    width: 1em;
+    height: 1em;
+}
+
 .nav-tabs {
     border-bottom: 2px solid #3498db;
 }
@@ -75,6 +81,8 @@ p, li {
     padding: 10px 20px;
     margin-right: 5px;
     transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
 }
 
 .nav-tabs .nav-link:hover {
@@ -105,12 +113,6 @@ p, li {
     color: #7f8c8d;
 }
 
-.job-details {
-    display: none;
-    margin-top: 10px;
-    padding-left: 20px;
-}
-
 .skill-tags {
     display: flex;
     flex-wrap: wrap;
@@ -129,16 +131,6 @@ p, li {
 }
 
 .skill-tag:hover {
-    background-color: #3498db;
-    color: white;
-}
-
-.filter-btn {
-    margin-right: 5px;
-    margin-bottom: 5px;
-}
-
-.filter-btn.active {
     background-color: #3498db;
     color: white;
 }
@@ -165,6 +157,17 @@ p, li {
     background-color: #0056b3;
 }
 
+@-moz-document url-prefix() {
+    .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .skill-tag {
+        margin: 2px;
+    }
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 20px;
@@ -177,4 +180,9 @@ p, li {
     .social-icons a {
         font-size: 20px;
     }
+}
+
+.table {
+    table-layout: fixed;
+    width: 100%;
 }
