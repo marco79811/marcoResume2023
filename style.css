@@ -48,6 +48,19 @@ p, li {
     font-size: 1em;
 }
 
+header p i {
+    width: 16px; /* 確保所有圖標寬度一致 */
+    text-align: center;
+    margin-right: 5px;
+}
+
+header p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 .social-icons {
     margin-top: 20px;
 }
@@ -196,4 +209,13 @@ body #scrollToTopBtn i {
 .table {
     table-layout: fixed;
     width: 100%;
+}
+
+@media (max-width: 576px) {
+    header p span.mx-2 {
+        display: none; /* 在小屏幕上隱藏分隔符 */
+    }
+    header p {
+        flex-direction: column;
+    }
 }
