@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Job details toggle
+    // 工作詳情切換功能
     document.querySelectorAll('.toggle-details').forEach(button => {
         button.addEventListener('click', function() {
             const details = this.nextElementSibling;
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Skill filtering
+    // 技能過濾功能
     const filterButtons = document.querySelectorAll('.filter-btn');
     const skillCategories = document.querySelectorAll('.skill-category');
 
@@ -27,13 +27,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     category.style.display = 'none';
                 }
             });
-            // Update active filter button
+            // 更新活動的過濾按鈕
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
         });
     });
 
-    // Smooth scrolling for anchor links
+    // 平滑滾動功能
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -43,7 +43,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add fade-in animation to job cards and education sections
+    // 滾動到頂部按鈕功能
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+    window.onscroll = function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollToTopBtn.style.display = "block";
+        } else {
+            scrollToTopBtn.style.display = "none";
+        }
+    };
+
+    scrollToTopBtn.addEventListener("click", function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // 頁面元素淡入動畫
     const fadeInElements = document.querySelectorAll('.job-card, .education');
     const fadeInObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -56,23 +74,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
     fadeInElements.forEach(element => {
         fadeInObserver.observe(element);
-    });
-
-    // Add scroll-to-top button
-    const scrollToTopBtn = document.createElement('button');
-    scrollToTopBtn.innerHTML = '&uarr;';
-    scrollToTopBtn.className = 'scroll-to-top';
-    document.body.appendChild(scrollToTopBtn);
-
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            scrollToTopBtn.classList.add('show');
-        } else {
-            scrollToTopBtn.classList.remove('show');
-        }
-    });
-
-    scrollToTopBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 });
