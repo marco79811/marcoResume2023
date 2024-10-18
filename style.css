@@ -135,7 +135,7 @@ p, li {
     color: white;
 }
 
-#scrollToTopBtn {
+body #scrollToTopBtn {
     display: none;
     position: fixed;
     bottom: 20px;
@@ -147,14 +147,25 @@ p, li {
     background-color: #007bff;
     color: white;
     cursor: pointer;
-    padding: 10px 15px;
+    width: 40px;  /* 設置固定寬度 */
+    height: 40px; /* 設置固定高度 */
     border-radius: 50%;
     font-size: 18px;
     transition: opacity 0.3s;
+    padding: 0 !important; /* 移除 padding */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#scrollToTopBtn:hover {
+body #scrollToTopBtn:hover {
     background-color: #0056b3;
+}
+
+/* 為了確保圖標在按鈕中居中 */
+body #scrollToTopBtn i {
+    display: block;
+    line-height: 1;
 }
 
 @-moz-document url-prefix() {
