@@ -147,7 +147,7 @@ p, li {
     background-color: #007bff;
     color: white;
     cursor: pointer;
-    padding: 15px;
+    padding: 10px 15px;
     border-radius: 50%;
     font-size: 18px;
     transition: opacity 0.3s;
